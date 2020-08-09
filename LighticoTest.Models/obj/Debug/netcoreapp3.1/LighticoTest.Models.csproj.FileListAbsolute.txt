@@ -1,0 +1,9 @@
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Models\bin\Debug\netcoreapp3.1\LighticoTest.Models.deps.json
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Models\bin\Debug\netcoreapp3.1\LighticoTest.Models.dll
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Models\obj\Debug\netcoreapp3.1\LighticoTest.Models.AssemblyInfoInputs.cache
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Models\obj\Debug\netcoreapp3.1\LighticoTest.Models.AssemblyInfo.cs
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Models\bin\Debug\netcoreapp3.1\LighticoTest.Models.pdb
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Models\obj\Debug\netcoreapp3.1\LighticoTest.Models.csprojAssemblyReference.cache
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Models\obj\Debug\netcoreapp3.1\LighticoTest.Models.csproj.CoreCompileInputs.cache
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Models\obj\Debug\netcoreapp3.1\LighticoTest.Models.dll
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Models\obj\Debug\netcoreapp3.1\LighticoTest.Models.pdb

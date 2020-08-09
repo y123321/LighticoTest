@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LighticoTest", "LighticoTest\LighticoTest.csproj", "{42ADFA84-E7C5-4528-A1C1-19365593583B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LighticoTest.Services", "LighticoTest.Services\LighticoTest.Services.csproj", "{C7E7FF38-65C6-44FB-9097-22582079429E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LighticoTest.Models", "LighticoTest.Models\LighticoTest.Models.csproj", "{2CC06C87-9ADA-42A4-8740-1E8BBAB84B78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LighticoTest.Interfaces", "LighticoTest.Interfaces\LighticoTest.Interfaces.csproj", "{D95F9D14-3787-4F21-ADD1-45F058AFEA5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LighticoTest.Dal", "LighticoTest.Dal\LighticoTest.Dal.csproj", "{1B3D9BE5-9598-4E71-BD40-57D56766D7C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42ADFA84-E7C5-4528-A1C1-19365593583B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42ADFA84-E7C5-4528-A1C1-19365593583B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42ADFA84-E7C5-4528-A1C1-19365593583B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42ADFA84-E7C5-4528-A1C1-19365593583B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7E7FF38-65C6-44FB-9097-22582079429E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7E7FF38-65C6-44FB-9097-22582079429E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7E7FF38-65C6-44FB-9097-22582079429E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7E7FF38-65C6-44FB-9097-22582079429E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CC06C87-9ADA-42A4-8740-1E8BBAB84B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CC06C87-9ADA-42A4-8740-1E8BBAB84B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CC06C87-9ADA-42A4-8740-1E8BBAB84B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CC06C87-9ADA-42A4-8740-1E8BBAB84B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D95F9D14-3787-4F21-ADD1-45F058AFEA5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D95F9D14-3787-4F21-ADD1-45F058AFEA5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D95F9D14-3787-4F21-ADD1-45F058AFEA5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D95F9D14-3787-4F21-ADD1-45F058AFEA5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B3D9BE5-9598-4E71-BD40-57D56766D7C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B3D9BE5-9598-4E71-BD40-57D56766D7C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B3D9BE5-9598-4E71-BD40-57D56766D7C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B3D9BE5-9598-4E71-BD40-57D56766D7C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCA7CE03-0EC4-41B0-AB5B-C894E8DE3302}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://ovalley.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = LighticoTest.Dal\\LighticoTest.Dal.csproj
+		SccProjectName1 = LighticoTest.Dal
+		SccLocalPath1 = LighticoTest.Dal
+		SccProjectUniqueName2 = LighticoTest.Interfaces\\LighticoTest.Interfaces.csproj
+		SccProjectName2 = LighticoTest.Interfaces
+		SccLocalPath2 = LighticoTest.Interfaces
+		SccProjectUniqueName3 = LighticoTest.Models\\LighticoTest.Models.csproj
+		SccProjectName3 = LighticoTest.Models
+		SccLocalPath3 = LighticoTest.Models
+		SccProjectUniqueName4 = LighticoTest.Services\\LighticoTest.Services.csproj
+		SccProjectName4 = LighticoTest.Services
+		SccLocalPath4 = LighticoTest.Services
+		SccProjectUniqueName5 = LighticoTest\\LighticoTest.csproj
+		SccProjectName5 = LighticoTest
+		SccLocalPath5 = LighticoTest
+	EndGlobalSection
+EndGlobal

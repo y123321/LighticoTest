@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "LighticoTest.Services/1.0.0": {
+        "dependencies": {
+          "LighticoTest.Interfaces": "1.0.0",
+          "LighticoTest.Models": "1.0.0"
+        },
+        "runtime": {
+          "LighticoTest.Services.dll": {}
+        }
+      },
+      "LighticoTest.Interfaces/1.0.0": {
+        "dependencies": {
+          "LighticoTest.Models": "1.0.0"
+        },
+        "runtime": {
+          "LighticoTest.Interfaces.dll": {}
+        }
+      },
+      "LighticoTest.Models/1.0.0": {
+        "runtime": {
+          "LighticoTest.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LighticoTest.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LighticoTest.Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LighticoTest.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

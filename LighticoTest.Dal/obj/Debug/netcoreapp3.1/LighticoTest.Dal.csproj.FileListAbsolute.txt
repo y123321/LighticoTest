@@ -1,0 +1,14 @@
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Dal\bin\Debug\netcoreapp3.1\LighticoTest.Dal.deps.json
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Dal\bin\Debug\netcoreapp3.1\LighticoTest.Dal.dll
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Dal\bin\Debug\netcoreapp3.1\LighticoTest.Dal.pdb
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Dal\bin\Debug\netcoreapp3.1\LighticoTest.Interfaces.dll
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Dal\bin\Debug\netcoreapp3.1\LighticoTest.Models.dll
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Dal\bin\Debug\netcoreapp3.1\LighticoTest.Interfaces.pdb
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Dal\bin\Debug\netcoreapp3.1\LighticoTest.Models.pdb
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Dal\obj\Debug\netcoreapp3.1\LighticoTest.Dal.csprojAssemblyReference.cache
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Dal\obj\Debug\netcoreapp3.1\LighticoTest.Dal.csproj.CoreCompileInputs.cache
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Dal\obj\Debug\netcoreapp3.1\LighticoTest.Dal.AssemblyInfoInputs.cache
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Dal\obj\Debug\netcoreapp3.1\LighticoTest.Dal.AssemblyInfo.cs
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Dal\obj\Debug\netcoreapp3.1\LighticoTest.Dal.csproj.CopyComplete
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Dal\obj\Debug\netcoreapp3.1\LighticoTest.Dal.dll
+C:\Users\Yuval\source\repos\LighticoTest\LighticoTest.Dal\obj\Debug\netcoreapp3.1\LighticoTest.Dal.pdb
