@@ -39,12 +39,15 @@ namespace LighticoTest.Services
                         var locker = _currenltlyRunning.GetOrAdd(opData.Key, new { });
                         lock (locker)
                         {
-                            if (opData.Value.Any())
-                            {
-                                var op = opData.Value.Dequeue();
-                                RunSingleOperation(op);
-                            }
-                            else _operations.Remove(opData.Key,out Queue<CustomerOperation> dd);
+                            if (opData.Value.Any() && opData.Value.Peek()?.IsWorking == true)
+                                continue;
+                            lock (opData.Value)
+                                if (opData.Value.Any())
+                                {
+                                    var op = opData.Value.Dequeue();
+                                    RunSingleOperation(op);
+                                }
+                                else _operations.Remove(opData.Key, out Queue<CustomerOperation> dd);
                             _currenltlyRunning.Remove(opData.Key, out object d);
                         }
                     }

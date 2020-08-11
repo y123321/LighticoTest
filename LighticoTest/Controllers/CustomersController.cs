@@ -45,7 +45,7 @@ namespace LighticoTest.Controllers
                 return UnprocessableEntity();
             await Task.Run(() =>
             {
-                _customersService.AddCustomer(customer);
+                _customersService.UpdateCustomer(customer);
             });
             return Ok(customer);
 
