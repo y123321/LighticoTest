@@ -12,9 +12,9 @@ namespace LighticoTest.Services
 {
     public class CustomersService : ICustomerService
     {
-        ConcurrentDictionary<Guid, Queue<CustomerOperation>> _operations;
+        ConcurrentDictionary<Guid, QueueWithLocks<CustomerOperation>> _operations;
 
-        public CustomersService(ConcurrentDictionary<Guid, Queue<CustomerOperation>> operations)
+        public CustomersService(ConcurrentDictionary<Guid, QueueWithLocks<CustomerOperation>> operations)
         {
             _operations = operations;
         }
@@ -24,7 +24,7 @@ namespace LighticoTest.Services
 
             while (_operations.ContainsKey(customer.Id))
                 customer.Id = Guid.NewGuid();
-            _operations[customer.Id] = new Queue<CustomerOperation>();
+            _operations[customer.Id] = new QueueWithLocks<CustomerOperation>();
             var addOperation = new CustomerOperation
             {
                 Customer = customer,
@@ -46,12 +46,12 @@ namespace LighticoTest.Services
         {
             _operations.AddOrUpdate(customer.Id, id =>
             {
-                var queue = new Queue<CustomerOperation>();
-                queue.Enqueue(updateOperation);
+                var queue = new QueueWithLocks<CustomerOperation>();
+                queue.Queue.Enqueue(updateOperation);
                 return queue;
             }, (id, queue) =>
             {
-                queue.Enqueue(updateOperation);
+                queue.Queue.Enqueue(updateOperation);
                 return queue;
             });
         }

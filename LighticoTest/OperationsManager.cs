@@ -13,11 +13,10 @@ namespace LighticoTest.Services
     public class CustomersOperationsManager : BackgroundService
     {
         ICustomersRepository _customersRepository;
-        private readonly ConcurrentDictionary<Guid, Queue<CustomerOperation>> _operations;
-        private readonly ConcurrentDictionary<Guid, object[]> _currenltlyRunning = new ConcurrentDictionary<Guid, object[]>();
+        private readonly ConcurrentDictionary<Guid, QueueWithLocks<CustomerOperation>> _operations;
         Thread t;
         Random _random = new Random();
-        public CustomersOperationsManager(ConcurrentDictionary<Guid, Queue<CustomerOperation>> operations, ICustomersRepository customersRepository)
+        public CustomersOperationsManager(ConcurrentDictionary<Guid, QueueWithLocks<CustomerOperation>> operations, ICustomersRepository customersRepository)
         {
             _operations = operations;
             _customersRepository = customersRepository;
@@ -34,22 +33,22 @@ namespace LighticoTest.Services
                             continue;
                         var index = _random.Next(0, _operations.Count - 1);
                         var opData = _operations.ToArray()[index];
-                        if (_currenltlyRunning.ContainsKey(opData.Key))
+                        if (opData.Value.IsWorking)
                             continue;
-                        var lockers = _currenltlyRunning.GetOrAdd(opData.Key, new object[] { new object(), new object() });
-                        lock (lockers[0])
+                        lock (opData.Value.FirstLock)
                         {
-                            if (_currenltlyRunning.ContainsKey(opData.Key))
+                            if (opData.Value.IsWorking)
                                 continue;
-                            lock (lockers[1])
+                            lock (opData.Value.SecondLock)
                             {
-                                if (opData.Value.Any())
+                                if (opData.Value.Queue.Any())
                                 {
-                                    var op = opData.Value.Dequeue();
+                                    var op = opData.Value.Queue.Dequeue();
                                     RunSingleOperation(op);
                                 }
-                                else _operations.Remove(opData.Key, out Queue<CustomerOperation> dd);
-                                _currenltlyRunning.Remove(opData.Key, out object[] d);
+                                if(!opData.Value.Queue.Any())
+                                    _operations.Remove(opData.Key, out QueueWithLocks<CustomerOperation> dd);
+                                opData.Value.IsWorking = false;
                             }
                         }
                     }

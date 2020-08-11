@@ -13,7 +13,7 @@ namespace LighticoTest.Dal
 {
     public class CustomersRepository : ICustomersRepository
     {
-         ConcurrentDictionary<Guid,ReaderWriterLock> _locks = new ConcurrentDictionary<Guid, ReaderWriterLock>();
+         ConcurrentDictionary<Guid, ReaderWriterLockSlim> _locks = new ConcurrentDictionary<Guid, ReaderWriterLockSlim>();
         readonly string FILES_PATH = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "LighticoApp");
         public CustomersRepository()
         {
@@ -21,18 +21,18 @@ namespace LighticoTest.Dal
         }
         public void AddCustomer(Customer customer)
         {
-            var locker = _locks.GetOrAdd(customer.Id, new ReaderWriterLock());
-            locker.AcquireWriterLock(TimeSpan.FromSeconds(60));
+            var locker = _locks.GetOrAdd(customer.Id, new ReaderWriterLockSlim());
+            locker.EnterWriteLock();
             try
             {
                 string filePath = Path.Combine(FILES_PATH, customer.Id.ToString() + ".txt");
                 string contents = JsonSerializer.Serialize(customer);
                 File.WriteAllText(filePath, contents);
-                _locks.TryRemove(customer.Id, out ReaderWriterLock d);
+                _locks.TryRemove(customer.Id, out ReaderWriterLockSlim d);
             }
             finally
             {
-                locker.ReleaseWriterLock();
+                locker.ExitWriteLock();
             }
         }
 

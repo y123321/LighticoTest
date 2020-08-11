@@ -33,7 +33,7 @@ namespace LighticoTest
         {
             services
                 .AddScoped<ICustomersRepository, CustomersRepository>()
-                .AddSingleton<ConcurrentDictionary<Guid, Queue<CustomerOperation>>>()
+                .AddSingleton<ConcurrentDictionary<Guid, QueueWithLocks<CustomerOperation>>>()
                 .AddSingleton<ICustomersRepository,CustomersRepository>()
                 .AddSingleton<ICustomerService,CustomersService>()
                   .AddHostedService<CustomersOperationsManager>()
