@@ -8,6 +8,5 @@ namespace LighticoTest.Models
     {
         public Customer Customer { get; set; }
         public OperationType Type { get; set; }
-        public bool IsWorking { get; set; }
     }
 }

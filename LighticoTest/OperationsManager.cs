@@ -14,7 +14,7 @@ namespace LighticoTest.Services
     {
         ICustomersRepository _customersRepository;
         private readonly ConcurrentDictionary<Guid, Queue<CustomerOperation>> _operations;
-        private readonly ConcurrentDictionary<Guid, object> _currenltlyRunning = new ConcurrentDictionary<Guid, object>();
+        private readonly ConcurrentDictionary<Guid, object[]> _currenltlyRunning = new ConcurrentDictionary<Guid, object[]>();
         Thread t;
         Random _random = new Random();
         public CustomersOperationsManager(ConcurrentDictionary<Guid, Queue<CustomerOperation>> operations, ICustomersRepository customersRepository)
@@ -36,19 +36,21 @@ namespace LighticoTest.Services
                         var opData = _operations.ToArray()[index];
                         if (_currenltlyRunning.ContainsKey(opData.Key))
                             continue;
-                        var locker = _currenltlyRunning.GetOrAdd(opData.Key, new { });
-                        lock (locker)
+                        var lockers = _currenltlyRunning.GetOrAdd(opData.Key, new object[] { new object(), new object() });
+                        lock (lockers[0])
                         {
-                            if (opData.Value.Any() && opData.Value.Peek()?.IsWorking == true)
+                            if (_currenltlyRunning.ContainsKey(opData.Key))
                                 continue;
-                            lock (opData.Value)
+                            lock (lockers[1])
+                            {
                                 if (opData.Value.Any())
                                 {
                                     var op = opData.Value.Dequeue();
                                     RunSingleOperation(op);
                                 }
                                 else _operations.Remove(opData.Key, out Queue<CustomerOperation> dd);
-                            _currenltlyRunning.Remove(opData.Key, out object d);
+                                _currenltlyRunning.Remove(opData.Key, out object[] d);
+                            }
                         }
                     }
                     catch (Exception e)
